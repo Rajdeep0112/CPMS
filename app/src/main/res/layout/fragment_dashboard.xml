@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DashboardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/datepickerCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:minHeight="50dp">
+
+            <ImageView
+                android:id="@+id/decreaseDateBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="left|center_vertical"
+                android:layout_marginStart="5dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/decrease_date_icon"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/dateBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="7dp"
+                android:text="Date"
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/increaseDateBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginEnd="5dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/increase_date_icon"
+                tools:ignore="RtlHardcoded" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/hearingHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="Hearings"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <FrameLayout
+                                android:id="@+id/progressBar1"
+                                android:layout_width="match_parent"
+                                android:layout_height="4dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center"
+                                    android:indeterminate="true"
+                                    android:indeterminateTint="#66A5AD"
+                                    android:indeterminateTintMode="src_atop" />
+
+                            </FrameLayout>
+
+                            <HorizontalScrollView
+                                android:id="@+id/hsv1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:background="@drawable/table_item_background"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/progressBar1">
+
+                                <TableLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:stretchColumns="*">
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:padding="2.5dp">
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="0.5"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Sr no."
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="FIR No."
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Year"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Reg. Date"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Ps Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="District Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Hearing Date"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Case ID"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Court Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Witnesses"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Bailer"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Accused"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Io"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                        </LinearLayout>
+
+                                    </TableRow>
+
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+
+                                            <androidx.recyclerview.widget.RecyclerView
+                                                android:id="@+id/hearingsByDateRecyclerView"
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:clipToPadding="false"
+                                                android:padding="2.5dp"
+                                                android:scrollbarStyle="outsideInset"
+                                                android:scrollbars="horizontal"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintEnd_toEndOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                tools:listitem="@layout/hearing_item_layout"/>
+                                        </LinearLayout>
+                                    </TableRow>
+                                </TableLayout>
+                            </HorizontalScrollView>
+
+                            <LinearLayout
+                                android:id="@+id/noHearingContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_margin="20dp"
+                                    android:padding="10dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/no_hearing" />
+
+                                <TextView
+                                    style="@style/ERROR_MSG_TITLE"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="No hearings found" />
+
+                                <TextView
+                                    style="@style/ERROR_MSG_DESC"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Try changing date to see hearings" />
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/noticeHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="Notices"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <FrameLayout
+                                android:id="@+id/progressBar2"
+                                android:layout_width="match_parent"
+                                android:layout_height="4dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ProgressBar
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_gravity="center"
+                                    android:indeterminate="true"
+                                    android:indeterminateTint="#66A5AD"
+                                    android:indeterminateTintMode="src_atop" />
+
+                            </FrameLayout>
+
+                            <HorizontalScrollView
+                                android:id="@+id/hsv2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:background="@drawable/table_item_background"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/progressBar2">
+
+                                <TableLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:stretchColumns="*">
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:padding="2.5dp">
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="0.5"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Sr no."
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Io Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Io Assign Date"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Io Compliance Date"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Notice Completed Date"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Issue Date"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Appearance Date"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Notice Compliance Date"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="From District Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="District Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Ps Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Dist Refer ID"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Court Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Notice Types Name"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="FIR No."
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Year"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Reg. Date"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                            <TextView
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/table_item_background"
+                                                android:gravity="center"
+                                                android:padding="5dp"
+                                                android:text="Case ID"
+                                                android:textColor="@color/black"
+                                                android:textSize="18sp"
+                                                android:textStyle="bold" />
+
+                                        </LinearLayout>
+
+                                    </TableRow>
+
+
+                                    <TableRow
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent">
+
+
+                                            <androidx.recyclerview.widget.RecyclerView
+                                                android:id="@+id/noticesByDateRecyclerView"
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="1"
+                                                android:clipToPadding="false"
+                                                android:padding="2.5dp"
+                                                android:scrollbarStyle="outsideInset"
+                                                android:scrollbars="horizontal"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintEnd_toEndOf="parent"
+                                                app:layout_constraintStart_toStartOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent"
+                                                tools:listitem="@layout/notice_item_layout" />
+                                        </LinearLayout>
+                                    </TableRow>
+                                </TableLayout>
+                            </HorizontalScrollView>
+
+                            <LinearLayout
+                                android:id="@+id/noNoticeContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:visibility="gone"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <ImageView
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_margin="20dp"
+                                    android:padding="10dp"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/no_notices" />
+
+                                <TextView
+                                    style="@style/ERROR_MSG_TITLE"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="No notices found" />
+
+                                <TextView
+                                    style="@style/ERROR_MSG_DESC"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Try changing date to see notices" />
+
+                            </LinearLayout>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</FrameLayout>

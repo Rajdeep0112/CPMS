@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/dashboard"
+        android:icon="@drawable/dashboard"
+        android:title="Dashboard" />
+
+    <item
+        android:id="@+id/assigned_case"
+        android:icon="@drawable/cases"
+        android:title="Cases" />
+
+    <item
+        android:id="@+id/hearing_list"
+        android:icon="@drawable/assigned_list"
+        android:title="Hearing List" />
+
+    <item
+        android:id="@+id/notice_list"
+        android:icon="@drawable/notices"
+        android:title="Notice List" />
+
+
+</menu>

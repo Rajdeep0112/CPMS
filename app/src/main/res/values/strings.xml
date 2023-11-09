@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">CPMS Mobile App</string>
+    <string name="log_out">Log out</string>
+    <string name="user_preferences">CPMS user details</string>
+    <string name="created_on">CPMS Created On</string>
+    <string name="name">CPMS Name</string>
+    <string name="pin">CPMS Pin</string>
+    <string name="ps_id">CPMS PS ID</string>
+    <string name="range_id">CPMS Range Id</string>
+    <string name="role_id">CPMS Roles id</string>
+    <string name="role_name">CPMS Role name</string>
+    <string name="id">CPMS ID</string>
+    <string name="refresh_token">CPMS Refresh Token</string>
+    <string name="token">CPMS user token</string>
+    <string name="district_id">CPMS user districtId</string>
+    <string name="gpf_no">CPMS user gpfNo</string>
+    <string name="ecode">CPMS user Ecode</string>
+    <string name="mobile_no">CPMS user mobile no</string>
+    <string name="father_name">CPMS user father name</string>
+    <string name="brass_no">CPMS user brass no</string>
+    <string name="officer_rank">CPMS user officer rank</string>
+    <string name="ui_designer_3"><![CDATA[UI Designer <3]]></string>
+    <string name="ResendOtp"><u>Resend Otp</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="spinner_District_title">Districts</string>
+    <string name="spinner_Ps_title">Police stations</string>
+</resources>

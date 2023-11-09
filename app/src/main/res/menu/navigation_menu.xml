@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/search_case"
+        android:icon="@drawable/baseline_search_24"
+        android:title="Search Case Details" />
+
+    <item
+        android:id="@+id/account"
+        android:title="Account">
+        <menu>
+            <item
+                android:id="@+id/user_account"
+                android:icon="@drawable/baseline_account_circle_24"
+                android:title="My Account" />
+            <item
+                android:id="@+id/user_settings"
+                android:icon="@drawable/baseline_settings_24"
+                android:title="Settings" />
+            <item
+                android:id="@+id/user_logout"
+                android:icon="@drawable/baseline_logout_24"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+
+
+</menu>

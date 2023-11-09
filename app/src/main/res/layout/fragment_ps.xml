@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/SCREEN"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PsFragment">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        style="@style/JUSTICE_BACKGROUND"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.15"
+        android:src="@drawable/justice_symbol"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <SearchView
+            android:id="@+id/search_district_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Search district id"
+            android:layout_margin="16dp"
+            android:iconifiedByDefault="false"
+            android:background="@drawable/search_background"
+            android:inputType="number"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ps_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+</FrameLayout>
